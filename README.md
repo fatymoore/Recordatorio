@@ -1,4 +1,0 @@
-Recordatorio
-============
-
-Notas recordatorio

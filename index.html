@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="UTF-8">
+    <title>Notes App</title>
+    <!-- libs -->
+
+    <script type="text/javascript" src="libs/underscore/underscore.js"></script>
+    <script type="text/javascript" src="libs/backbone/backbone.js"></script>
+    <script type="text/javascript" src="libs/json2.js"></script>
+
+    <script type="text/javascript" src="utils/constants.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+	<!-- Models, Views, utils -->
+    <script type="text/javascript" src="utils/storage.js"></script>
+    <script type="text/javascript" src="models/localStorageModels.js"></script>
+
+	<meta name="description" content="Notes App">
+    <meta name="author" content="Fatima Gilmartin Luquero (fatymoore@gmail.com)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/lungo-2.1.0/lungo.css">
+    <link rel="stylesheet" href="css/lungo-2.1.0/lungo.icon.css">
+    <link rel="stylesheet" href="css/lungo-2.1.0/lungo.icon.brand.css">
+    <link rel="stylesheet" href="css/lungo-2.1.0/theme.lungo.css">
+
+    <script type="text/javascript" src='js/app.js'></script>
+
+    <style>
+        a>span {
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+ <body class="app">
+
+ 	<section id="main" data-transition="">
+
+ 		<header data-title="Notes App">
+ 			<nav>
+ 				<a href="#main" data-router="article" class="left" data-icon="home"></a>
+ 				<a href="#writeNotes" data-router="section" class="right" data-icon='pencil'></a>
+        	</nav>
+ 		</header>
+ 		<article id="main-article" class="active list indented scroll">
+            <ul>
+            </ul>
+        </article>
+ 		<footer>
+	        <nav>
+	            <a href="#main" data-router="article" data-icon="home"></a>
+	            <a href="#writeNotes" data-router="section" data-icon="right"></a>
+	        </nav>
+    	</footer>
+	</section>
+
+	<section id="writeNotes">
+		<header data-back="home blue" data-title="Write"></header>
+
+    	<article id="write" class="active">
+
+			<section id="form" data-transition="slide" class="show active">
+				<div class="form">
+		            <fieldset>
+		                <label>Title:</label>
+		                <input type="text" id='title'>
+		            </fieldset>
+		            <fieldset data-icon="pencil">
+		                <label>Message:</label>
+		                <textarea id='message'></textarea>
+		            </fieldset>
+                    <fieldset>
+                        <label for="Priority"></label>
+                        <input type='range' min='1' max='5' value='1' id='priority' name='priority'/>
+                    </fieldset>
+	        	</div>
+			</section>
+    	</article>
+        <footer>
+            <nav>
+                <a href="#back" data-router="section" data-icon="left"></a>
+                <a href='#back' id="save" data-router='section' data-icon='check'></a>
+            </nav>
+        </footer>
+	</section>
+
+	<!-- libs -->
+	<script type="text/javascript" src="libs/quojs-2.3.1/quo.js"></script>
+  	<script type="text/javascript" src="libs/lungo-2.1.0/lungo.js"></script>
+
+ 	<!-- Lungo - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 		'Notes App',
+            version:	'1.0',
+            history:	false
+        });
+    </script>
+
+</body>
+</html>
+
